@@ -325,6 +325,388 @@ const decisionMatrix = [
     }
 ];
 
+// Metadados adicionais ricos de cada ferramenta
+const toolMetadata = {
+    'Gemini CLI': {
+        desenvolvedor: 'Google / Community',
+        plataforma_pt: 'CLI (Linha de Comando)',
+        plataforma_en: 'CLI (Command Line)',
+        custo_pt: 'Grátis (Requer chave de API própria)',
+        custo_en: 'Free (Requires own API Key)',
+        licenca: 'Apache 2.0 (Open-Source)',
+        interface_pt: 'Interface de Linha de Comando (CLI)',
+        interface_en: 'Command Line Interface (CLI)',
+        usabilidade_pt: 'Direta e leve, ideal para desenvolvedores de terminal',
+        usabilidade_en: 'Direct and lightweight, ideal for terminal developers',
+        intervencao_pt: 'Total. O usuário interage e modifica os comandos diretamente no terminal',
+        intervencao_en: 'Total. The user interacts and modifies commands directly in the terminal'
+    },
+    'Bolt.new': {
+        desenvolvedor: 'StackBlitz',
+        plataforma_pt: 'Web (Navegador)',
+        plataforma_en: 'Web (Browser)',
+        custo_pt: 'Grátis (Limites diários) / Planos pagos a partir de US$ 9/mês',
+        custo_en: 'Free (Daily limits) / Paid plans starting at $9/month',
+        licenca: 'Proprietária (Núcleo Open-Source)',
+        interface_pt: 'Plataforma Sandbox Web',
+        interface_en: 'Web Sandbox Platform',
+        usabilidade_pt: 'Excelente. Ambiente de desenvolvimento web completo sem configurações manuais',
+        usabilidade_en: 'Excellent. Complete web development environment without manual configuration',
+        intervencao_pt: 'Total. Possui editor de código completo integrado no navegador',
+        intervencao_en: 'Total. Features a complete in-browser code editor'
+    },
+    'Cursor': {
+        desenvolvedor: 'Anysphere',
+        plataforma_pt: 'Desktop (Windows, macOS, Linux)',
+        plataforma_en: 'Desktop (Windows, macOS, Linux)',
+        custo_pt: 'Grátis (Uso básico) / Pro por US$ 20/mês',
+        custo_en: 'Free (Basic usage) / Pro for $20/month',
+        licenca: 'Proprietária',
+        interface_pt: 'IDE (Editor de Código)',
+        interface_en: 'IDE (Code Editor)',
+        usabilidade_pt: 'Excepcional. Baseado no VS Code, oferecendo transição imediata e natural',
+        usabilidade_en: 'Exceptional. Based on VS Code, offering an immediate and natural transition',
+        intervencao_pt: 'Total. Editor de código completo onde o desenvolvedor escreve e edita livremente',
+        intervencao_en: 'Total. Full-fledged code editor where developers write and edit freely'
+    },
+    'GitHub Copilot': {
+        desenvolvedor: 'GitHub / Microsoft',
+        plataforma_pt: 'IDE Extension (VS Code, JetBrains, Visual Studio, Neovim)',
+        plataforma_en: 'IDE Extension (VS Code, JetBrains, Visual Studio, Neovim)',
+        custo_pt: 'US$ 10/mês (Individual) ou US$ 19/mês (Business)',
+        custo_en: '$10/month (Individual) or $19/month (Business)',
+        licenca: 'Proprietária',
+        interface_pt: 'Extensão de IDE',
+        interface_en: 'IDE Extension',
+        usabilidade_pt: 'Excelente. Integrado ao editor, oferecendo completamento de código em tempo real',
+        usabilidade_en: 'Excellent. Integrated into the editor, offering real-time code completion',
+        intervencao_pt: 'Total. Sugestões aparecem no editor e podem ser aceitas, rejeitadas ou modificadas',
+        intervencao_en: 'Total. Suggestions appear in the editor and can be accepted, rejected, or modified'
+    },
+    'Lovable': {
+        desenvolvedor: 'Lovable Co.',
+        plataforma_pt: 'Web (Navegador)',
+        plataforma_en: 'Web (Browser)',
+        custo_pt: 'Grátis (Uso básico) / Planos premium a partir de US$ 20/mês',
+        custo_en: 'Free (Basic usage) / Premium plans starting at $20/month',
+        licenca: 'Proprietária',
+        interface_pt: 'Plataforma No-Code/Low-Code com IA',
+        interface_en: 'AI No-Code/Low-Code Platform',
+        usabilidade_pt: 'Excepcional. Construção visual rica em tempo real orientada a chat',
+        usabilidade_en: 'Exceptional. Rich visual real-time chat-oriented building',
+        intervencao_pt: 'Sim. Permite exportar para o GitHub e editar código diretamente',
+        intervencao_en: 'Yes. Allows exporting to GitHub and editing code directly'
+    },
+    'v0 by Vercel': {
+        desenvolvedor: 'Vercel',
+        plataforma_pt: 'Web (Navegador)',
+        plataforma_en: 'Web (Browser)',
+        custo_pt: 'Grátis (200 créditos premium/mês) / Pro por US$ 20/mês',
+        custo_en: 'Free (200 premium credits/month) / Pro for $20/month',
+        licenca: 'Proprietária',
+        interface_pt: 'Plataforma de UI Generativa Web',
+        interface_en: 'Web Generative UI Platform',
+        usabilidade_pt: 'Extraordinária. Geração visual instantânea de componentes React e Tailwind',
+        usabilidade_en: 'Extraordinary. Instant visual generation of React and Tailwind components',
+        intervencao_pt: 'Sim. Permite copiar o código gerado ou intervir via prompts adicionais',
+        intervencao_en: 'Yes. Allows copying generated code or intervening via additional prompts'
+    },
+    'Windsurf': {
+        desenvolvedor: 'Codeium',
+        plataforma_pt: 'Desktop (Windows, macOS, Linux)',
+        plataforma_en: 'Desktop (Windows, macOS, Linux)',
+        custo_pt: 'Grátis (Uso básico) / Pro por US$ 15/mês',
+        custo_en: 'Free (Basic usage) / Pro for $15/month',
+        licenca: 'Proprietária',
+        interface_pt: 'IDE Agêntica',
+        interface_en: 'Agentic IDE',
+        usabilidade_pt: 'Fantástica. Integração profunda entre editor e agente inteligente (Cascade)',
+        usabilidade_en: 'Fantastic. Deep integration between editor and smart agent (Cascade)',
+        intervencao_pt: 'Total. Editor de código local com total liberdade para alterar arquivos',
+        intervencao_en: 'Total. Local code editor with full freedom to modify files'
+    },
+    'Zed': {
+        desenvolvedor: 'Zed Industries',
+        plataforma_pt: 'Desktop (macOS, Linux, Windows em Beta)',
+        plataforma_en: 'Desktop (macOS, Linux, Windows in Beta)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'GPL-3.0 / Apache 2.0 (Open-Source)',
+        interface_pt: 'IDE (Editor de Código de Alto Desempenho)',
+        interface_en: 'IDE (High Performance Code Editor)',
+        usabilidade_pt: 'Excelente. Ultra-rápido, escrito em Rust, com suporte nativo a IA',
+        usabilidade_en: 'Excellent. Ultra-fast, written in Rust, with native AI support',
+        intervencao_pt: 'Total. Editor de arquivos de código tradicionais com controle local',
+        intervencao_en: 'Total. Traditional code file editor with local control'
+    },
+    'Continue.dev': {
+        desenvolvedor: 'Continue Dev, Inc.',
+        plataforma_pt: 'IDE Extension (VS Code, JetBrains)',
+        plataforma_en: 'IDE Extension (VS Code, JetBrains)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'Apache 2.0 (Open-Source)',
+        interface_pt: 'Extensão de Assistente de IDE',
+        interface_en: 'IDE Assistant Extension',
+        usabilidade_pt: 'Alta. Painel lateral amigável e atalhos rápidos integrados ao editor',
+        usabilidade_en: 'High. Friendly side panel and quick shortcuts integrated into the editor',
+        intervencao_pt: 'Total. Insere e altera trechos de código diretamente no arquivo ativo',
+        intervencao_en: 'Total. Inserts and modifies code snippets directly in the active file'
+    },
+    'AntigravityRef': {
+        desenvolvedor: 'Google DeepMind (Advanced Agentic Coding team)',
+        plataforma_pt: 'IDE / Agente CLI',
+        plataforma_en: 'IDE / CLI Agent',
+        custo_pt: 'Sob consulta (Corporativo)',
+        custo_en: 'On request (Enterprise)',
+        licenca: 'Proprietária',
+        interface_pt: 'Agente de Engenharia de Software Autônomo',
+        interface_en: 'Autonomous Software Engineering Agent',
+        usabilidade_pt: 'Muito alta, com fluxos agênticos avançados e interface de controle',
+        usabilidade_en: 'Very high, with advanced agentic workflows and control interface',
+        intervencao_pt: 'Total. Permite rever e ajustar planos de alteração e intervir nos arquivos gerados',
+        intervencao_en: 'Total. Allows reviewing and adjusting change plans and intervening in generated files'
+    },
+    'Codex': {
+        desenvolvedor: 'OpenAI',
+        plataforma_pt: 'Nuvem (API)',
+        plataforma_en: 'Cloud (API)',
+        custo_pt: 'Pago por uso de API (Descontinuado/Substituído por modelos GPT-4o)',
+        custo_en: 'Paid per API usage (Deprecated/Replaced by GPT-4o models)',
+        licenca: 'Proprietária',
+        interface_pt: 'API de Engine de IA',
+        interface_en: 'AI Engine API',
+        usabilidade_pt: 'Requer integração via código (ideal para programadores)',
+        usabilidade_en: 'Requires integration via code (ideal for developers)',
+        intervencao_pt: 'Total. Como é uma API, o desenvolvedor consome e gerencia o código recebido como quiser',
+        intervencao_en: 'Total. As an API, the developer consumes and manages the received code as desired'
+    },
+    'Roo Code': {
+        desenvolvedor: 'RooVetGit / Open Source',
+        plataforma_pt: 'IDE Extension (VS Code)',
+        plataforma_en: 'IDE Extension (VS Code)',
+        custo_pt: 'Grátis (Código Aberto, paga apenas consumo de API)',
+        custo_en: 'Free (Open-source, only pay for API usage)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Extensão de IDE (Agente Interativo)',
+        interface_en: 'IDE Extension (Interactive Agent)',
+        usabilidade_pt: 'Alta. Integração de chat no VS Code com permissões dinâmicas de arquivos',
+        usabilidade_en: 'High. Chat integration in VS Code with dynamic file permissions',
+        intervencao_pt: 'Total. O agente edita arquivos com sua supervisão constante',
+        intervencao_en: 'Total. The agent edits files with your constant supervision'
+    },
+    'Cline': {
+        desenvolvedor: 'Cline / Open Source',
+        plataforma_pt: 'IDE Extension (VS Code)',
+        plataforma_en: 'IDE Extension (VS Code)',
+        custo_pt: 'Grátis (Código Aberto, paga apenas consumo de API)',
+        custo_en: 'Free (Open-source, only pay for API usage)',
+        licenca: 'Apache 2.0 (Open-Source)',
+        interface_pt: 'Extensão de IDE (Agente de Software Autônomo)',
+        interface_en: 'IDE Extension (Autonomous Software Agent)',
+        usabilidade_pt: 'Muito boa. Painel lateral poderoso no VS Code com console de aprovação de ações',
+        usabilidade_en: 'Very good. Powerful sidebar in VS Code with actions approval console',
+        intervencao_pt: 'Total. Permite aprovar, rejeitar ou intervir em cada alteração de arquivo sugerida',
+        intervencao_en: 'Total. Allows approving, rejecting, or intervening in every suggested file change'
+    },
+    'Replit Agent': {
+        desenvolvedor: 'Replit',
+        plataforma_pt: 'Web (Navegador, integrado ao Replit)',
+        plataforma_en: 'Web (Browser, integrated into Replit)',
+        custo_pt: 'Incluso no Replit Core (US$ 15-25/mês)',
+        custo_en: 'Included in Replit Core ($15-25/month)',
+        licenca: 'Proprietária',
+        interface_pt: 'IDE Web / Plataforma Cloud Agêntica',
+        interface_en: 'Web IDE / Agentic Cloud Platform',
+        usabilidade_pt: 'Excepcional. Criação e publicação rápida a partir de prompts naturais',
+        usabilidade_en: 'Exceptional. Rapid creation and publication from natural prompts',
+        intervencao_pt: 'Total. Workspace completo online editável a qualquer momento',
+        intervencao_en: 'Total. Complete online workspace editable at any time'
+    },
+    'CodeConductor': {
+        desenvolvedor: 'CodeConductor Co.',
+        plataforma_pt: 'Web (Navegador)',
+        plataforma_en: 'Web (Browser)',
+        custo_pt: 'Planos comerciais (Foco em empresas e startups)',
+        custo_en: 'Commercial plans (Focused on enterprises and startups)',
+        licenca: 'Proprietária',
+        interface_pt: 'Plataforma Web Low-Code com IA',
+        interface_en: 'AI Low-Code Web Platform',
+        usabilidade_pt: 'Alta. Guia interativo visual voltado para gerentes de projeto',
+        usabilidade_en: 'High. Visual interactive guide targeted at project managers',
+        intervencao_pt: 'Sim. Permite exportar ou editar as soluções geradas de forma guiada',
+        intervencao_en: 'Yes. Allows exporting or editing generated solutions in a guided manner'
+    },
+    'Aider': {
+        desenvolvedor: 'Paul Gauthier / Open Source',
+        plataforma_pt: 'CLI (Linha de Comando no Terminal)',
+        plataforma_en: 'CLI (Terminal Command Line)',
+        custo_pt: 'Grátis (Código Aberto, paga uso de tokens da API externa)',
+        custo_en: 'Free (Open-source, only pays for external API tokens)',
+        licenca: 'Apache 2.0 (Open-Source)',
+        interface_pt: 'Interface de Linha de Comando com Pareamento de IA',
+        interface_en: 'Command Line Interface with AI Pairing',
+        usabilidade_pt: 'Excelente para quem gosta do terminal; integração automática com Git',
+        usabilidade_en: 'Excellent for terminal lovers; automatic Git integration',
+        intervencao_pt: 'Total. Edita arquivos locais e gera commits automáticos na sua branch',
+        intervencao_en: 'Total. Edits local files and generates automatic commits in your branch'
+    },
+    'Claude Code': {
+        desenvolvedor: 'Anthropic',
+        plataforma_pt: 'CLI (Terminal)',
+        plataforma_en: 'CLI (Terminal)',
+        custo_pt: 'Cobrado por tokens consumidos (Estágio de Beta Pública)',
+        custo_en: 'Charged per tokens consumed (Public Beta Stage)',
+        licenca: 'Proprietária',
+        interface_pt: 'CLI Agêntico Inteligente',
+        interface_en: 'Intelligent Agentic CLI',
+        usabilidade_pt: 'Excepcional para desenvolvedores experientes; comandos rápidos e precisos',
+        usabilidade_en: 'Exceptional for experienced developers; fast and precise commands',
+        intervencao_pt: 'Total. Lida com arquivos locais, comanda testes e aceita intervenção imediata',
+        intervencao_en: 'Total. Handles local files, drives tests, and accepts immediate intervention'
+    },
+    'Jules': {
+        desenvolvedor: 'GitHub / Microsoft',
+        plataforma_pt: 'Web (Integração do GitHub Enterprise)',
+        plataforma_en: 'Web (GitHub Enterprise Integration)',
+        custo_pt: 'Sob consulta (Adicional corporativo)',
+        custo_en: 'On request (Corporate add-on)',
+        licenca: 'Proprietária',
+        interface_pt: 'Agente Autônomo Integrado ao GitHub',
+        interface_en: 'GitHub-Integrated Autonomous Agent',
+        usabilidade_pt: 'Excelente para empresas. Funciona direto nos fluxos de Pull Request',
+        usabilidade_en: 'Excellent for companies. Works directly within Pull Request workflows',
+        intervencao_pt: 'Sim. Gera Pull Requests editáveis e revisáveis antes do merge',
+        intervencao_en: 'Yes. Generates editable and reviewable Pull Requests before merging'
+    },
+    'CrewAI': {
+        desenvolvedor: 'CrewAI, Inc. / Open Source',
+        plataforma_pt: 'Biblioteca de Programação (Python / JavaScript)',
+        plataforma_en: 'Coding Library (Python / JavaScript)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Framework de Código de Orquestração Multi-Agente',
+        interface_en: 'Multi-Agent Orchestration Code Framework',
+        usabilidade_pt: 'Média. Requer programação de software, focado puramente em engenheiros',
+        usabilidade_en: 'Medium. Requires software programming, purely focused on engineers',
+        intervencao_pt: 'Absoluta. Você desenvolve e gerencia a lógica interna de cada agente',
+        intervencao_en: 'Absolute. You develop and manage the internal logic of each agent'
+    },
+    'n8n com IA': {
+        desenvolvedor: 'n8n.io',
+        plataforma_pt: 'Web / Servidor (Auto-hospedado ou Cloud)',
+        plataforma_en: 'Web / Server (Self-hosted or Cloud)',
+        custo_pt: 'Grátis (Auto-hospedado de uso comunitário) / Planos Cloud de US$ 20/mês',
+        custo_en: 'Free (Self-hosted community usage) / Cloud plans at $20/month',
+        licenca: 'Faircode (Sustainable Use License)',
+        interface_pt: 'Plataforma de Automação Visual Drag-and-Drop',
+        interface_en: 'Drag-and-Drop Visual Automation Platform',
+        usabilidade_pt: 'Muito Alta. Layout visual por nós extremamente compreensível',
+        usabilidade_en: 'Very High. Node-based visual layout is extremely comprehensible',
+        intervencao_pt: 'Sim. Permite programar nós de código customizados em JavaScript/Python',
+        intervencao_en: 'Yes. Allows programming custom JavaScript/Python code nodes'
+    },
+    'Microsoft Agent Framework': {
+        desenvolvedor: 'Microsoft',
+        plataforma_pt: 'Biblioteca / SDK (Python / .NET)',
+        plataforma_en: 'Library / SDK (Python / .NET)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Framework de Desenvolvimento de Agentes',
+        interface_en: 'Agent Development Framework',
+        usabilidade_pt: 'Baixa/Média. Requer conhecimentos avançados de engenharia de software',
+        usabilidade_en: 'Low/Medium. Requires advanced software engineering knowledge',
+        intervencao_pt: 'Total. Controle absoluto de código e estrutura por parte do programador',
+        intervencao_en: 'Total. Absolute control of code and structure by the programmer'
+    },
+    'Kiro': {
+        desenvolvedor: 'Kiro Software',
+        plataforma_pt: 'Web / Nuvem (Corporativo)',
+        plataforma_en: 'Web / Cloud (Enterprise)',
+        custo_pt: 'Sob consulta (Planos Empresariais)',
+        custo_en: 'On request (Enterprise Plans)',
+        licenca: 'Proprietária',
+        interface_pt: 'Plataforma de Agentes de Engenharia Autônoma',
+        interface_en: 'Autonomous Engineering Agent Platform',
+        usabilidade_pt: 'Alta. Dashboard centralizado com gerenciamento de tarefas de TI',
+        usabilidade_en: 'High. Centralized dashboard with IT task management',
+        intervencao_pt: 'Sim. Integração direta e transparente com repositórios e branches Git',
+        intervencao_en: 'Yes. Direct and transparent integration with Git repositories and branches'
+    },
+    'LangGraph': {
+        desenvolvedor: 'LangChain Inc.',
+        plataforma_pt: 'Biblioteca de Software (Python / TS)',
+        plataforma_en: 'Software Library (Python / TS)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Biblioteca de Orquestração Cíclica baseada em Grafos',
+        interface_en: 'Graph-based Cyclic Orchestration Library',
+        usabilidade_pt: 'Média/Baixa. Projetada para desenvolvedores de IA construírem fluxos complexos',
+        usabilidade_en: 'Medium/Low. Designed for AI developers to build complex flows',
+        intervencao_pt: 'Absoluta. Controle micro-estruturado de estados, loops e transições',
+        intervencao_en: 'Absolute. Micro-structured control of states, loops, and transitions'
+    },
+    'OpenHands': {
+        desenvolvedor: 'All-Hands AI / Community',
+        plataforma_pt: 'Web (Docker Local / Nuvem)',
+        plataforma_en: 'Web (Local Docker / Cloud)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Agente de Engenharia Autônomo com Sandbox',
+        interface_en: 'Autonomous Engineering Agent with Sandbox',
+        usabilidade_pt: 'Muito boa. Interface web completa com console, editor de arquivos e browser',
+        usabilidade_en: 'Very good. Complete web interface with terminal, file editor, and browser',
+        intervencao_pt: 'Total. Edite diretamente arquivos no editor web ou interaja via terminal',
+        intervencao_en: 'Total. Directly edit files in the web editor or interact via terminal'
+    },
+    'OpenAI Agents SDK': {
+        desenvolvedor: 'OpenAI',
+        plataforma_pt: 'SDK / Biblioteca (Python)',
+        plataforma_en: 'SDK / Library (Python)',
+        custo_pt: 'Grátis (SDK aberto, paga créditos de API consumidos)',
+        custo_en: 'Free (Open SDK, only pay for API credits consumed)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Kit de Desenvolvimento de Agentes de IA',
+        interface_en: 'AI Agent Development Kit',
+        usabilidade_pt: 'Média. Voltado para criação ágil de protótipos de agentes programados',
+        usabilidade_en: 'Medium. Oriented towards agile prototyping of programmed agents',
+        intervencao_pt: 'Total. Controle absoluto de código Python no desenvolvimento do agente',
+        intervencao_en: 'Total. Absolute control of Python code during agent development'
+    },
+    'Devin': {
+        desenvolvedor: 'Cognition AI',
+        plataforma_pt: 'Web (Navegador)',
+        plataforma_en: 'Web (Browser)',
+        custo_pt: 'Corporativo / Individual estimado em US$ 500+/mês',
+        custo_en: 'Enterprise / Individual estimated at $500+/month',
+        licenca: 'Proprietária',
+        interface_pt: 'Agente de Software Autônomo de Ponta a Ponta',
+        interface_en: 'End-to-End Autonomous Software Agent',
+        usabilidade_pt: 'Excelente. Interface premium que mostra chat, terminal, editor e navegação gráfica',
+        usabilidade_en: 'Excellent. Premium interface showing chat, terminal, editor, and graphical browsing',
+        intervencao_pt: 'Total. Permite parar a execução, editar arquivos no workspace e continuar',
+        intervencao_en: 'Total. Allows stopping execution, editing files in the workspace, and continuing'
+    },
+    'LlamaIndex': {
+        desenvolvedor: 'LlamaIndex Inc.',
+        plataforma_pt: 'Biblioteca de Software (Python / TS)',
+        plataforma_en: 'Software Library (Python / TS)',
+        custo_pt: 'Grátis (Código Aberto)',
+        custo_en: 'Free (Open-Source)',
+        licenca: 'MIT (Open-Source)',
+        interface_pt: 'Framework de Conexão de Dados para IA',
+        interface_en: 'Data Connection Framework for AI',
+        usabilidade_pt: 'Média. Ótimas abstrações de dados para engenheiros de software',
+        usabilidade_en: 'Medium. Excellent data abstractions for software engineers',
+        intervencao_pt: 'Total. Você codifica toda a estrutura de RAG e agentes usando as APIs do framework',
+        intervencao_en: 'Total. You code the entire RAG and agent structure using the framework\'s APIs'
+    }
+};
+
 // i18n Functions
 async function initI18n() {
     const navLang = navigator.language.toLowerCase();
@@ -429,6 +811,37 @@ function saveAnswer(step) {
     if (step === 4) answers.controle = document.getElementById('control-level').value;
 }
 
+function findAlternativeTool(primary) {
+    if (!primary) return null;
+    
+    // Tenta encontrar uma ferramenta diferente com o mesmo nivel, objetivo e custo diferente
+    let alt = decisionMatrix.find(item => 
+        item.nivel === primary.nivel &&
+        item.objetivo === primary.objetivo &&
+        item.custo !== primary.custo &&
+        item.ferramenta !== primary.ferramenta
+    );
+    
+    // Se não encontrar, tenta qualquer outra ferramenta diferente com o mesmo nivel e objetivo
+    if (!alt) {
+        alt = decisionMatrix.find(item => 
+            item.nivel === primary.nivel &&
+            item.objetivo === primary.objetivo &&
+            item.ferramenta !== primary.ferramenta
+        );
+    }
+    
+    // Se ainda não encontrar, tenta qualquer outra ferramenta com o mesmo nivel
+    if (!alt) {
+        alt = decisionMatrix.find(item => 
+            item.nivel === primary.nivel &&
+            item.ferramenta !== primary.ferramenta
+        );
+    }
+    
+    return alt;
+}
+
 window.submitWizard = function() {
     if (validateStep(4)) {
         saveAnswer(4);
@@ -445,8 +858,9 @@ window.submitWizard = function() {
             document.getElementById('result-title').textContent = result.ferramenta;
             document.getElementById('result-link').href = result.link;
             
-            // Store active result for translation updates
+            // Store active result and alternative for translation updates
             window.activeResult = result;
+            window.activeAlternative = findAlternativeTool(result);
             updateResultDescription();
             
             document.getElementById('step-4').classList.remove('active');
@@ -464,6 +878,41 @@ function updateResultDescription() {
         
         const catKey = currentLang === 'en' ? 'categoria_en' : 'categoria_pt';
         document.getElementById('result-category').textContent = window.activeResult[catKey];
+
+        // Buscar metadados adicionais ricos
+        const toolName = window.activeResult.ferramenta;
+        const metadata = toolMetadata[toolName];
+        if (metadata) {
+            document.getElementById('result-developer').textContent = metadata.desenvolvedor;
+            
+            const platKey = currentLang === 'en' ? 'plataforma_en' : 'plataforma_pt';
+            document.getElementById('result-platform').textContent = metadata[platKey];
+            
+            const costKey = currentLang === 'en' ? 'custo_en' : 'custo_pt';
+            document.getElementById('result-cost').textContent = metadata[costKey];
+            
+            document.getElementById('result-license').textContent = metadata.licenca;
+            
+            const intKey = currentLang === 'en' ? 'interface_en' : 'interface_pt';
+            document.getElementById('result-interface').textContent = metadata[intKey];
+            
+            const usabKey = currentLang === 'en' ? 'usabilidade_en' : 'usabilidade_pt';
+            document.getElementById('result-usability').textContent = metadata[usabKey];
+            
+            const codeKey = currentLang === 'en' ? 'intervencao_en' : 'intervencao_pt';
+            document.getElementById('result-code-intervention').textContent = metadata[codeKey];
+        }
+
+        // Buscar e renderizar a ferramenta alternativa
+        if (window.activeAlternative) {
+            document.querySelector('.alternative-suggestion').style.display = 'block';
+            document.getElementById('alt-title').textContent = window.activeAlternative.ferramenta;
+            document.getElementById('alt-desc').textContent = window.activeAlternative[descKey];
+            document.getElementById('alt-category').textContent = window.activeAlternative[catKey];
+            document.getElementById('alt-link').href = window.activeAlternative.link;
+        } else {
+            document.querySelector('.alternative-suggestion').style.display = 'none';
+        }
     }
 }
 
@@ -472,6 +921,7 @@ window.restartWizard = function() {
     answers = { nivel: '', objetivo: '', custo: '', controle: '' };
     currentStep = 1;
     window.activeResult = null;
+    window.activeAlternative = null;
     
     // Reset inputs
     document.getElementById('skill-level').value = "";
@@ -481,6 +931,7 @@ window.restartWizard = function() {
     radiosCost.forEach(r => r.checked = false);
     document.getElementById('control-level').value = "";
     document.getElementById('result-category').textContent = "";
+    document.getElementById('alt-category').textContent = "";
 
     // Reset UI
     document.getElementById('step-result').classList.remove('active');
@@ -514,6 +965,14 @@ window.closeHelpModal = function() {
 }
 
 function getStepContext() {
+    if (document.getElementById('step-result').classList.contains('active')) {
+        const primary = window.activeResult ? window.activeResult.ferramenta : 'Nenhuma';
+        const alternative = window.activeAlternative ? window.activeAlternative.ferramenta : 'Nenhuma';
+        const langText = currentLang === 'en' 
+            ? `The primary recommended tool is: ${primary}. The alternative recommended tool is: ${alternative}.` 
+            : `A ferramenta principal recomendada foi: ${primary}. A ferramenta alternativa recomendada foi: ${alternative}.`;
+        return (translations['context.result'] || '') + ' ' + langText;
+    }
     if (currentStep === 1) return translations['context.step1'];
     if (currentStep === 2) return translations['context.step2'];
     if (currentStep === 3) return translations['context.step3'];

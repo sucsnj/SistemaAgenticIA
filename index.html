@@ -132,13 +132,64 @@
             <!-- Resultado -->
             <div class="step result-container" id="step-result">
                 <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-                <h2 data-i18n="result.title">A melhor escolha para você é:</h2>
+                <div class="step-header">
+                    <h2 data-i18n="result.title">A melhor escolha para você é:</h2>
+                    <button class="btn-help" onclick="openHelpModal()"><i class="fas fa-robot"></i> <span data-i18n="button.help">Ajuda com IA</span></button>
+                </div>
+                
+                <!-- Recomendação Principal -->
                 <div class="tool-card">
                     <span id="result-category" class="category-badge"></span>
                     <h3 id="result-title" class="mt-2">Ferramenta Nome</h3>
                     <p id="result-desc">Descrição breve da ferramenta.</p>
+                    
+                    <!-- Grid de Detalhes da Ferramenta -->
+                    <div class="tool-details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fas fa-code-branch"></i> <span data-i18n="result.label.developer">Desenvolvedor</span></span>
+                            <span id="result-developer" class="detail-value">...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fas fa-laptop-code"></i> <span data-i18n="result.label.platform">Plataforma</span></span>
+                            <span id="result-platform" class="detail-value">...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fas fa-dollar-sign"></i> <span data-i18n="result.label.cost">Valor (Custo)</span></span>
+                            <span id="result-cost" class="detail-value">...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fas fa-file-contract"></i> <span data-i18n="result.label.license">Licença</span></span>
+                            <span id="result-license" class="detail-value">...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fas fa-terminal"></i> <span data-i18n="result.label.interface">Interface</span></span>
+                            <span id="result-interface" class="detail-value">...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fas fa-compass"></i> <span data-i18n="result.label.usability">Usabilidade</span></span>
+                            <span id="result-usability" class="detail-value">...</span>
+                        </div>
+                        <div class="detail-item full-width">
+                            <span class="detail-label"><i class="fas fa-edit"></i> <span data-i18n="result.label.code_intervention">Intervir no Código</span></span>
+                            <span id="result-code-intervention" class="detail-value">...</span>
+                        </div>
+                    </div>
+
                     <a id="result-link" href="#" target="_blank" class="btn-link"><span data-i18n="result.link">Acessar Site Oficial</span> <i class="fas fa-external-link-alt"></i></a>
                 </div>
+
+                <!-- Segunda Opção / Recomendação Alternativa -->
+                <div class="alternative-suggestion glass-panel mt-4">
+                    <h4 data-i18n="result.alternative.title" class="alt-title-header">Opção Alternativa Recomendada</h4>
+                    <p class="alt-intro-text" data-i18n="result.alternative.intro">Caso queira considerar um caminho diferente, sugerimos:</p>
+                    <div class="alternative-card mt-2">
+                        <span id="alt-category" class="category-badge"></span>
+                        <h4 id="alt-title" class="mt-2">Nome da Alternativa</h4>
+                        <p id="alt-desc">Descrição da alternativa.</p>
+                        <a id="alt-link" href="#" target="_blank" class="btn-link-sm"><span data-i18n="result.link">Acessar Site Oficial</span> <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
                 <button class="btn-secondary mt-4" onclick="restartWizard()"><i class="fas fa-redo"></i> <span data-i18n="button.restart">Iniciar Novamente</span></button>
             </div>
         </main>
