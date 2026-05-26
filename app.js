@@ -1031,7 +1031,7 @@ window.sendChatMessage = async function() {
                 contents: chatHistory,
                 generationConfig: {
                     temperature: 0.7,
-                    maxOutputTokens: 150
+                    maxOutputTokens: 1000
                 }
             })
         });
