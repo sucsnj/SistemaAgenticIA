@@ -37,7 +37,7 @@ const decisionMatrix = [
         categoria_pt: 'CLI', categoria_en: 'CLI',
         desc_pt: 'Interface de linha de comando baseada no Gemini, flexível e fácil para colaborar e programar rapidamente.', 
         desc_en: 'Gemini-powered command line interface, flexible and easy for quick collaboration and coding.', 
-        link: 'https://github.com/google/generative-ai-cli'
+        link: 'https://github.com/google-gemini/gemini-cli'
     },
     { 
         nivel: 'Verde', objetivo: 'Colaboração', custo: 'Open-source', controle: 'Solução pronta', 
@@ -45,7 +45,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Plataforma web de desenvolvimento fullstack em sandbox para construir e compartilhar aplicações instantaneamente.', 
         desc_en: 'Web-based fullstack sandbox development platform to build and share applications instantly.', 
-        link: 'https://bolt.new/'
+        link: 'https://bolt.new'
     },
     { 
         nivel: 'Verde', objetivo: 'Colaboração', custo: 'Proprietário', controle: 'Flexibilidade', 
@@ -53,7 +53,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Editor de código baseado em VS Code com recursos avançados de IA para desenvolvimento colaborativo rápido.', 
         desc_en: 'VS Code-based code editor with advanced AI features for rapid collaborative development.', 
-        link: 'https://www.cursor.com/'
+        link: 'https://cursor.com'
     },
     { 
         nivel: 'Verde', objetivo: 'Colaboração', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -69,7 +69,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Criação ágil de protótipos web direto no navegador com geração automática e deploy em um clique.', 
         desc_en: 'Agile web prototyping directly in the browser with automatic generation and one-click deployment.', 
-        link: 'https://bolt.new/'
+        link: 'https://bolt.new'
     },
     { 
         nivel: 'Verde', objetivo: 'Prototipagem', custo: 'Open-source', controle: 'Solução pronta', 
@@ -77,7 +77,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Ideal para iniciar novos projetos visualmente de forma simples e direta a partir de prompts básicos.', 
         desc_en: 'Ideal for visually starting new projects simply and directly from basic prompts.', 
-        link: 'https://bolt.new/'
+        link: 'https://bolt.new'
     },
     { 
         nivel: 'Verde', objetivo: 'Prototipagem', custo: 'Proprietário', controle: 'Flexibilidade', 
@@ -85,7 +85,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Plataforma de IA que permite construir, implantar e iterar em aplicativos web reais e sofisticados.', 
         desc_en: 'AI platform that lets you build, deploy, and iterate on real, sophisticated web applications.', 
-        link: 'https://lovable.dev/'
+        link: 'https://lovable.dev'
     },
     { 
         nivel: 'Verde', objetivo: 'Prototipagem', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -93,7 +93,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Sistema generativo da Vercel que cria interfaces de usuário prontas para React e Tailwind a partir de prompts de texto.', 
         desc_en: 'Vercel’s generative system that creates ready-to-use React and Tailwind user interfaces from text prompts.', 
-        link: 'https://v0.dev/'
+        link: 'https://v0.app'
     },
     { 
         nivel: 'Verde', objetivo: 'Automação', custo: 'Open-source', controle: 'Flexibilidade', 
@@ -101,7 +101,7 @@ const decisionMatrix = [
         categoria_pt: 'CLI', categoria_en: 'CLI',
         desc_pt: 'Excelente para automatizar tarefas de codificação e geração de scripts diretamente no terminal com a API Gemini.', 
         desc_en: 'Excellent for automating coding tasks and script generation directly in the terminal using the Gemini API.', 
-        link: 'https://github.com/google/generative-ai-cli'
+        link: 'https://github.com/google-gemini/gemini-cli'
     },
     { 
         nivel: 'Verde', objetivo: 'Automação', custo: 'Open-source', controle: 'Solução pronta', 
@@ -109,7 +109,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Permite automatizar a montagem de layouts e o setup inicial de projetos web sem configurações manuais.', 
         desc_en: 'Automates layout assembly and the initial setup of web projects without manual configurations.', 
-        link: 'https://bolt.new/'
+        link: 'https://bolt.new'
     },
     { 
         nivel: 'Verde', objetivo: 'Automação', custo: 'Proprietário', controle: 'Flexibilidade', 
@@ -117,7 +117,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'A primeira IDE agêntica do mundo, que combina IA contextual com fluxos de automação de código incríveis.', 
         desc_en: 'The world\'s first agentic IDE, combining contextual AI with incredible code automation workflows.', 
-        link: 'https://codeium.com/windsurf'
+        link: 'https://windsurf.com'
     },
     { 
         nivel: 'Verde', objetivo: 'Automação', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -135,7 +135,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Editor de código ultra-rápido, open-source e focado em colaboração remota fluida com suporte nativo a IA.', 
         desc_en: 'Ultra-fast, open-source code editor focused on fluid remote collaboration with native AI support.', 
-        link: 'https://zed.dev/'
+        link: 'https://zed.dev'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Colaboração', custo: 'Open-source', controle: 'Solução pronta', 
@@ -143,15 +143,15 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Extensão open-source incrível que permite integrar qualquer LLM local ou comercial diretamente ao VS Code/JetBrains.', 
         desc_en: 'Amazing open-source extension that lets you integrate any local or commercial LLM directly into VS Code/JetBrains.', 
-        link: 'https://www.continue.dev/'
+        link: 'https://continue.dev'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Colaboração', custo: 'Proprietário', controle: 'Flexibilidade', 
-        ferramenta: 'AntigravityRef', 
+        ferramenta: 'Google Antigravity', 
         categoria_pt: 'Agente autônomo', categoria_en: 'Autonomous agent',
         desc_pt: 'Ferramenta agêntica inovadora de codificação corporativa que aprimora o trabalho em equipe e análises profundas.', 
         desc_en: 'Innovative enterprise coding agentic tool that enhances teamwork and deep analysis.', 
-        link: 'https://github.com/'
+        link: 'https://antigravity.google'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Colaboração', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -159,7 +159,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Modelo de linguagem especializado da OpenAI que serve como motor inteligente para ferramentas colaborativas de desenvolvimento.', 
         desc_en: 'OpenAI\'s specialized language model that serves as the smart engine for collaborative development tools.', 
-        link: 'https://openai.com/blog/openai-codex'
+        link: 'https://openai.com/codex'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Prototipagem', custo: 'Open-source', controle: 'Flexibilidade', 
@@ -167,7 +167,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Extensão de IA altamente customizável para VS Code que suporta instruções e regras personalizadas por projeto.', 
         desc_en: 'Highly customizable AI extension for VS Code supporting custom system prompts and per-project instructions.', 
-        link: 'https://github.com/RooVetGit/Roo-Code'
+        link: 'https://roocode.com'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Prototipagem', custo: 'Open-source', controle: 'Solução pronta', 
@@ -175,7 +175,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Agente de IA autônomo de código aberto que lê arquivos, roda comandos e cria aplicações passo a passo no seu VS Code.', 
         desc_en: 'Autonomous open-source AI agent that reads files, runs terminal commands, and builds apps step-by-step in your VS Code.', 
-        link: 'https://github.com/cline/cline'
+        link: 'https://cline.bot'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Prototipagem', custo: 'Proprietário', controle: 'Flexibilidade', 
@@ -183,7 +183,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Agente potente da Replit que cria aplicações completas em segundos apenas a partir da sua descrição textual.', 
         desc_en: 'Powerful agent by Replit that builds entire applications from scratch in seconds based on your text descriptions.', 
-        link: 'https://replit.com/'
+        link: 'https://replit.com'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Prototipagem', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -191,7 +191,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Uma plataforma que simplifica a prototipagem de produtos de software complexos através de interações guiadas por IA.', 
         desc_en: 'A platform that simplifies the prototyping of complex software products through AI-guided interactions.', 
-        link: 'https://codeconductor.io/'
+        link: 'https://codeconductor.ai'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Automação', custo: 'Open-source', controle: 'Flexibilidade', 
@@ -199,7 +199,7 @@ const decisionMatrix = [
         categoria_pt: 'CLI', categoria_en: 'CLI',
         desc_pt: 'Ferramenta de programação pareada por IA no terminal que sincroniza de forma fluida com repositórios Git.', 
         desc_en: 'AI pair programming tool in the terminal that seamlessly synchronizes with Git repositories.', 
-        link: 'https://aider.chat/'
+        link: 'https://aider.chat'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Automação', custo: 'Open-source', controle: 'Solução pronta', 
@@ -207,7 +207,7 @@ const decisionMatrix = [
         categoria_pt: 'IDE', categoria_en: 'IDE',
         desc_pt: 'Permite orquestrar e testar fluxos repetitivos de automação de desenvolvimento com controle direto de arquivos.', 
         desc_en: 'Allows orchestrating and testing repetitive development automation flows with direct file control.', 
-        link: 'https://github.com/cline/cline'
+        link: 'https://cline.bot'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Automação', custo: 'Proprietário', controle: 'Flexibilidade', 
@@ -215,15 +215,15 @@ const decisionMatrix = [
         categoria_pt: 'CLI', categoria_en: 'CLI',
         desc_pt: 'Agente de IA interativo da Anthropic focado no terminal, capaz de entender, criar e automatizar fluxos complexos de código.', 
         desc_en: 'Anthropic\'s interactive agent focused on the terminal, capable of understanding, creating, and automating complex code workflows.', 
-        link: 'https://support.anthropic.com/'
+        link: 'https://www.claude.com/product/claude-code'
     },
     { 
         nivel: 'Amarelo', objetivo: 'Automação', custo: 'Proprietário', controle: 'Solução pronta', 
-        ferramenta: 'Jules', 
+        ferramenta: 'Google Jules', 
         categoria_pt: 'Agente autônomo', categoria_en: 'Autonomous agent',
-        desc_pt: 'Assistente corporativo inteligente proprietário ideal para automação de tarefas rotineiras de desenvolvimento de software.', 
-        desc_en: 'Proprietary smart enterprise assistant ideal for automating routine software development tasks.', 
-        link: 'https://github.com/'
+        desc_pt: 'Agente de IA da Google integrado para automação inteligente de desenvolvimento.', 
+        desc_en: 'Google\'s integrated AI agent for smart development automation.', 
+        link: 'https://jules.google'
     },
 
     // --- VERMELHO (Complexo) ---
@@ -233,7 +233,7 @@ const decisionMatrix = [
         categoria_pt: 'Framework', categoria_en: 'Framework',
         desc_pt: 'Framework avançado para orquestração de agentes autônomos de IA que trabalham de forma colaborativa.', 
         desc_en: 'Advanced framework for orchestrating autonomous AI agents that work collaboratively together.', 
-        link: 'https://www.crewai.com/'
+        link: 'https://crewai.com'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Colaboração', custo: 'Open-source', controle: 'Solução pronta', 
@@ -241,7 +241,7 @@ const decisionMatrix = [
         categoria_pt: 'Plataforma', categoria_en: 'Platform',
         desc_pt: 'Poderosa plataforma de automação visual auto-hospedada com nós de IA avançados para fluxos colaborativos integrados.', 
         desc_en: 'Powerful self-hosted visual automation platform with advanced AI nodes for integrated collaborative workflows.', 
-        link: 'https://n8n.io/'
+        link: 'https://n8n.io'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Colaboração', custo: 'Proprietário', controle: 'Flexibilidade', 
@@ -249,7 +249,7 @@ const decisionMatrix = [
         categoria_pt: 'Framework', categoria_en: 'Framework',
         desc_pt: 'Framework corporativo robusto para construir e integrar agentes inteligentes em ecossistemas de software escaláveis.', 
         desc_en: 'Robust enterprise framework to build and integrate smart agents into scalable software ecosystems.', 
-        link: 'https://github.com/microsoft/'
+        link: 'https://learn.microsoft.com/en-us/agent-framework/'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Colaboração', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -257,7 +257,7 @@ const decisionMatrix = [
         categoria_pt: 'Agente autônomo', categoria_en: 'Autonomous agent',
         desc_pt: 'Plataforma avançada de engenharia de software autônoma e colaborativa para equipes de alta performance.', 
         desc_en: 'Advanced autonomous and collaborative software engineering platform for high-performance teams.', 
-        link: 'https://github.com/'
+        link: 'https://kiro.dev'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Prototipagem', custo: 'Open-source', controle: 'Flexibilidade', 
@@ -281,7 +281,7 @@ const decisionMatrix = [
         categoria_pt: 'Framework', categoria_en: 'Framework',
         desc_pt: 'SDK oficial da OpenAI para projetar e prototipar agentes autônomos modulares em cima de seus modelos principais.', 
         desc_en: 'Official OpenAI SDK to design and prototype modular autonomous agents on top of their core models.', 
-        link: 'https://github.com/openai/openai-agents-sdk'
+        link: 'https://github.com/openai/openai-agents-python'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Prototipagem', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -289,7 +289,7 @@ const decisionMatrix = [
         categoria_pt: 'Agente autônomo', categoria_en: 'Autonomous agent',
         desc_pt: 'O primeiro engenheiro de software de IA totalmente autônomo do mundo, capaz de criar e implantar protótipos ponta a ponta.', 
         desc_en: 'The world\'s first fully autonomous AI software engineer, capable of creating and deploying prototypes end-to-end.', 
-        link: 'https://www.cognition.ai/'
+        link: 'https://devin.ai'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Automação', custo: 'Open-source', controle: 'Flexibilidade', 
@@ -297,7 +297,7 @@ const decisionMatrix = [
         categoria_pt: 'Framework', categoria_en: 'Framework',
         desc_pt: 'Estrutura de dados robusta para conectar fontes de dados privadas com LLMs, ideal para automação de IA contextual complexa.', 
         desc_en: 'Robust data framework to connect private data sources with LLMs, ideal for complex contextual AI automation.', 
-        link: 'https://www.llamaindex.ai/'
+        link: 'https://llamaindex.ai'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Automação', custo: 'Open-source', controle: 'Solução pronta', 
@@ -313,7 +313,7 @@ const decisionMatrix = [
         categoria_pt: 'Framework', categoria_en: 'Framework',
         desc_pt: 'Permite automatizar interações complexas de API de maneira flexível e estruturada usando agentes inteligentes.', 
         desc_en: 'Enables automating complex API interactions in a flexible and structured manner using intelligent agents.', 
-        link: 'https://github.com/openai/openai-agents-sdk'
+        link: 'https://github.com/openai/openai-agents-python'
     },
     { 
         nivel: 'Vermelho', objetivo: 'Automação', custo: 'Proprietário', controle: 'Solução pronta', 
@@ -321,7 +321,7 @@ const decisionMatrix = [
         categoria_pt: 'Agente autônomo', categoria_en: 'Autonomous agent',
         desc_pt: 'Ideal para automatizar migrações de código complexas e execuções completas de pipelines de engenharia de software.', 
         desc_en: 'Ideal for automating complex code migrations and full executions of software engineering pipelines.', 
-        link: 'https://www.cognition.ai/'
+        link: 'https://devin.ai'
     }
 ];
 
@@ -364,7 +364,7 @@ const toolMetadata = {
         licenca: 'Proprietária',
         interface_pt: 'IDE (Editor de Código)',
         interface_en: 'IDE (Code Editor)',
-        usabilidade_pt: 'Excepcional. Baseado no VS Code, oferecendo transição imediata e natural',
+        usabilidade_pt: 'Excepcional. Baseado no VS Code, offering transition immediate and natural',
         usabilidade_en: 'Exceptional. Based on VS Code, offering an immediate and natural transition',
         intervencao_pt: 'Total. Editor de código completo onde o desenvolvedor escreve e edita livremente',
         intervencao_en: 'Total. Full-fledged code editor where developers write and edit freely'
@@ -436,7 +436,7 @@ const toolMetadata = {
         interface_en: 'IDE (High Performance Code Editor)',
         usabilidade_pt: 'Excelente. Ultra-rápido, escrito em Rust, com suporte nativo a IA',
         usabilidade_en: 'Excellent. Ultra-fast, written in Rust, with native AI support',
-        intervencao_pt: 'Total. Editor de arquivos de código tradicionais com controle local',
+        intervencao_pt: 'Total. Editor de arquivos de código tradicional com controle local',
         intervencao_en: 'Total. Traditional code file editor with local control'
     },
     'Continue.dev': {
@@ -453,7 +453,7 @@ const toolMetadata = {
         intervencao_pt: 'Total. Insere e altera trechos de código diretamente no arquivo ativo',
         intervencao_en: 'Total. Inserts and modifies code snippets directly in the active file'
     },
-    'AntigravityRef': {
+    'Google Antigravity': {
         desenvolvedor: 'Google DeepMind (Advanced Agentic Coding team)',
         plataforma_pt: 'IDE / Agente CLI',
         plataforma_en: 'IDE / CLI Agent',
@@ -565,19 +565,19 @@ const toolMetadata = {
         intervencao_pt: 'Total. Lida com arquivos locais, comanda testes e aceita intervenção imediata',
         intervencao_en: 'Total. Handles local files, drives tests, and accepts immediate intervention'
     },
-    'Jules': {
-        desenvolvedor: 'GitHub / Microsoft',
-        plataforma_pt: 'Web (Integração do GitHub Enterprise)',
-        plataforma_en: 'Web (GitHub Enterprise Integration)',
-        custo_pt: 'Sob consulta (Adicional corporativo)',
-        custo_en: 'On request (Corporate add-on)',
+    'Google Jules': {
+        desenvolvedor: 'Google',
+        plataforma_pt: 'Web / Google Cloud',
+        plataforma_en: 'Web / Google Cloud',
+        custo_pt: 'Sob consulta (Foco corporativo)',
+        custo_en: 'On request (Enterprise focus)',
         licenca: 'Proprietária',
-        interface_pt: 'Agente Autônomo Integrado ao GitHub',
-        interface_en: 'GitHub-Integrated Autonomous Agent',
-        usabilidade_pt: 'Excelente para empresas. Funciona direto nos fluxos de Pull Request',
-        usabilidade_en: 'Excellent for companies. Works directly within Pull Request workflows',
-        intervencao_pt: 'Sim. Gera Pull Requests editáveis e revisáveis antes do merge',
-        intervencao_en: 'Yes. Generates editable and reviewable Pull Requests before merging'
+        interface_pt: 'Agente Autônomo Integrado',
+        interface_en: 'Integrated Autonomous Agent',
+        usabilidade_pt: 'Excelente para fluxos corporativos integrados ao ecossistema do Google',
+        usabilidade_en: 'Excellent for corporate workflows integrated into the Google ecosystem',
+        intervencao_pt: 'Sim. Gera Pull Requests editáveis e revisáveis',
+        intervencao_en: 'Yes. Generates editable and reviewable Pull Requests'
     },
     'CrewAI': {
         desenvolvedor: 'CrewAI, Inc. / Open Source',
@@ -646,7 +646,7 @@ const toolMetadata = {
         interface_en: 'Graph-based Cyclic Orchestration Library',
         usabilidade_pt: 'Média/Baixa. Projetada para desenvolvedores de IA construírem fluxos complexos',
         usabilidade_en: 'Medium/Low. Designed for AI developers to build complex flows',
-        intervencao_pt: 'Absoluta. Controle micro-estruturado de estados, loops e transições',
+        intervencao_pt: 'Absoluta. Controle micro-estruturado de states, loops e transições',
         intervencao_en: 'Absolute. Micro-structured control of states, loops, and transitions'
     },
     'OpenHands': {
